@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 
 #ノイズと閾値の設定
-noise = 5
+noise = 20
 thete = 0
 N = 100
 epoch =1000
@@ -17,9 +17,9 @@ q_2_noise_all = np.zeros((1000, 25))
 q_2_rec_all = np.zeros((1000, 25))
 
 #画像の読み込み
-Q_1 = np.loadtxt("picture/picture_3.csv", delimiter = ",", dtype = int)
+Q_1 = np.loadtxt("picture/picture_5.csv", delimiter = ",", dtype = int)
 q_1 = np.array([Q_1.flatten()])
-Q_2 = np.loadtxt("picture/picture_4.csv", delimiter = ",", dtype = int)
+Q_2 = np.loadtxt("picture/picture_6.csv", delimiter = ",", dtype = int)
 q_2 = np.array([Q_2.flatten()])
 
 #重み行列の作成
@@ -55,4 +55,5 @@ recall_performance_average_2 = recall_performance_2 / 1000
 correct_answer_rate_1 = correct_answer_1 / 1000
 correct_answer_rate_2 = correct_answer_2 / 1000
 
-print('<picture1>\n類似度の全試行平均:{} 想起性能:{}\n<picture2>\n類似度の全試行平均:{} 想起性能:{}'.format(recall_performance_average_1, correct_answer_rate_1, recall_performance_average_2, correct_answer_rate_2))
+print('<picture1>\n類似度の全試行平均:{} 想起性能:{}'.format(recall_performance_average_1, correct_answer_rate_1))
+print('<picture2>\n類似度の全試行平均:{} 想起性能:{}'.format(recall_performance_average_2, correct_answer_rate_2))
